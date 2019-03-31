@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import GovernmentSizeChooser from './GovernmentSizeChooser';
 import GovernmentFixer from './GovernmentFixer';
 import './App.css';
 
@@ -8,21 +9,17 @@ class App extends Component {
     super(props);
     this.state = { size: 'municipal' };
   }
-  chooseLevel = (event) => {
-    this.setState({ size: event.target.value });
+  chooseSize = (size) => {
+    this.setState({ size });
   }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <label>
-            <input type="radio" name="size" checked={this.state.size == 'municipal'} value="municipal" onChange={this.chooseLevel} />
-            Municipal
-          </label>
-          <label>
-            <input type="radio" name="size" checked={this.state.size == 'federal'} value="federal" onChange={this.chooseLevel} />
-            Federal
-          </label>
+          <GovernmentSizeChooser
+            sizes={['municipal', 'state', 'federal']}
+            onSelectSize={this.chooseSize}
+          />
           <GovernmentFixer size={this.state.size} />
         </header>
       </div>
