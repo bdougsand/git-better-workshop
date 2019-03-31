@@ -21,3 +21,38 @@ Set the `user.name`/`user.email` git config in order to commit as a different pe
 git config user.name "Harry Helpful"
 git config user.email "hhelpful@gmail.com"
 ```
+
+## Workshop Facilitation
+
+In order to use this repository as an aid in a git workshop:
+
+### Pre-workshop Setup
+1. Create a repository that only has the `master` branch.
+    1. Clone this repository locally
+    2. Create a new workshop repository in GitHub
+    3. Add this new repository as a remote
+    4. Push commits from `master` to this remote
+
+### During Workshop
+1. Make sure all attendees have a GitHub account
+2. Have workshop attendees fork the above repository
+
+#### Accepting Pull Requests
+
+3. Push the first commit from `cleanup` to the repository, issue a PR with no description
+4. Discuss PR with attendees; have them vote on if this should be merged (it shouldn't, as there is a bug)
+5. Push second/third commit from `cleanup` to the repository
+6. Help attendees create a PR that will merge this `cleanup` branch into the `master` branch of their fork
+7. Discuss whether this PR should be merged (it shouldn't, as it breaks tests)
+8. Push the last commit from `cleanup` and point out that the PRs they created are automatically updated
+9. Have attendees merge the PR
+
+#### Adding features and handling merge conflicts
+
+10. Push the `choose_government_level` branch, have attendees create a PR
+11. Discuss merge conflicts and help attendees merge this branch
+
+#### Adding contributing guidelines
+
+12. Push the `better_docs` branch and have attendees create a PR
+13. Discuss repository maintainence best practices
